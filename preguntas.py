@@ -11,11 +11,7 @@ Utilice el archivo `data.csv` para resolver las preguntas.
 
 
 """
-import csv
- with open("data.csv", "r") as file:
-    data = file.readlines()
-    data = [line.replace("\n", "") for line in data]
-    data = [line.split("\t") for line in data]
+
 
 def pregunta_01():
     """
@@ -25,7 +21,11 @@ def pregunta_01():
     214
 
     """
-   
+   import csv
+with open("data.csv", "r") as file:
+    data = file.readlines()
+    data = [line.replace("\n", "") for line in data]
+    data = [line.split("\t") for line in data]
 
 data_columna2 = [fila[1] for fila in data]
 
