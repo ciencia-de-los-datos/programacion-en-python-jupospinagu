@@ -59,7 +59,7 @@ def pregunta_02():
         ("E", data_columna1.count('E')),
     ]
 )
-    y= Diccionario.items()
+    y= sorted(list(Diccionario.items()))
 
     return y
 
