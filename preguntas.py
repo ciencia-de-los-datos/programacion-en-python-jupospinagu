@@ -21,8 +21,22 @@ def pregunta_01():
     214
 
     """
-    return
+    with open(r"C:\Users\JP\Documents\GitHub\programacion-en-python-jupospinagu\data.csv", "r") as file:
+    data = file.readlines()
+data = [line.replace("\n", "") for line in data]
+data = [line.split("\t") for line in data]
 
+data_columna2 = [fila[1] for fila in data]
+
+
+data_columna2= [
+    [int(field) if i_row >= 0 else field for field in row]
+    for i_row, row in enumerate(data_columna2)
+]
+
+x = sum([row[0] for row in data_columna2])
+    return x
+    
 
 def pregunta_02():
     """
