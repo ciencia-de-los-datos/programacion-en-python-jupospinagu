@@ -36,7 +36,7 @@ data_columna2= [
 ]
 
 x = sum([row[0] for row in data_columna2])
-   return x
+return x
     
 
 def pregunta_02():
