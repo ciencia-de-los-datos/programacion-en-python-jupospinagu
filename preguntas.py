@@ -28,10 +28,8 @@ def pregunta_01():
     data_columna2 = [fila[1] for fila in data]
     data_columna2= [
     [int(field) if i_row >= 0 else field for field in row]
-    for i_row, row in enumerate(data_columna2)
-]
-
-     x = sum([row[0] for row in data_columna2])
+    for i_row, row in enumerate(data_columna2)]
+    x = sum([row[0] for row in data_columna2])
 
      return x
     
