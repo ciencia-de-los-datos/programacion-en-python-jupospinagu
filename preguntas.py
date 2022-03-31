@@ -11,6 +11,7 @@ Utilice el archivo `data.csv` para resolver las preguntas.
 
 
 """
+import csv
  with open("data.csv", "r") as file:
     data = file.readlines()
     data = [line.replace("\n", "") for line in data]
