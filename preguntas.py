@@ -49,7 +49,19 @@ def pregunta_02():
     ]
 
     """
-    return
+    data_columna1 = [fila[0] for fila in data]
+    Diccionario = dict(
+    [
+        ("A", data_columna1.count('A')),
+        ("B", data_columna1.count('B')),
+        ("C", data_columna1.count('C')),
+        ("D", data_columna1.count('D')),
+        ("E", data_columna1.count('E')),
+    ]
+)
+    y= Diccionario.items()
+
+    return y
 
 
 def pregunta_03():
