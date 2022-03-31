@@ -13,8 +13,8 @@ Utilice el archivo `data.csv` para resolver las preguntas.
 """
  with open("data.csv", "r") as file:
     data = file.readlines()
-data = [line.replace("\n", "") for line in data]
-data = [line.split("\t") for line in data]
+    data = [line.replace("\n", "") for line in data]
+    data = [line.split("\t") for line in data]
 
 def pregunta_01():
     """
