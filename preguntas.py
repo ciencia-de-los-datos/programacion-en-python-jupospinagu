@@ -50,6 +50,8 @@ def pregunta_02():
 
     """
     data_columna1 = [fila[0] for fila in data]
+
+    
     Diccionario = dict(
     [
         ("A", data_columna1.count('A')),
@@ -82,10 +84,7 @@ def pregunta_03():
     data_punto3 = [ [row[0]] + [int(row[1])] for row in data ]
     data_punto3.sort()
     data_punto3
-    
-    import itertools
-    from operator import itemgetter
-    
+
     data_grouped_by_letra = {
     letra: list(group)
     for letra, group in itertools.groupby(
