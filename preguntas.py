@@ -98,7 +98,8 @@ def pregunta_03():
     ]
     for letra in data_grouped_by_letra.keys()
 ]
-    return sum_punto3
+    y = tuple(sum_punto3)
+    return y
     
 
 
