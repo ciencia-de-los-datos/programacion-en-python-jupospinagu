@@ -177,7 +177,33 @@ def pregunta_05():
     ]
 
     """
-    return
+    data_punto5 = [ [(row[0]), (int(row[1]))]  for row in data ]
+    data_punto5.sort()
+    data_punto5[0:5]
+
+    import itertools
+    from operator import itemgetter
+
+    data_grouped_by_letra = {
+    letra: list(group)
+    for letra, group in itertools.groupby(
+        data_punto5[0:],
+        key=itemgetter(0),
+    )
+}
+    resultado_punto5 = [
+    [
+        letra,
+        (max([row[1] for row in data_grouped_by_letra[letra]])),
+        (min([row[1] for row in data_grouped_by_letra[letra]]))
+    ]
+    for letra in data_grouped_by_letra.keys()
+]
+
+    resultado_punto5 = [ tuple(x) for x in resultado_punto5 ]
+    
+    return resultado_punto5
+    
 
 
 def pregunta_06():
