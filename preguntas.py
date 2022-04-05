@@ -131,9 +131,9 @@ def pregunta_04():
     from operator import itemgetter
 
     with open("data.csv", "r") as file:
-    data_prueba = file.readlines()
-    data_prueba = [line.replace("\n", "") for line in data_prueba]
-    data_prueba = [line.split("-") for line in data_prueba]
+     data_prueba = file.readlines()
+     data_prueba = [line.replace("\n", "") for line in data_prueba]
+     data_prueba = [line.split("-") for line in data_prueba]
 
     data_punto4 = [ [(row[1])]  for row in data_prueba ]
     data_punto4.sort()
