@@ -82,8 +82,10 @@ def pregunta_03():
     data_punto3 = [ [row[0]] + [int(row[1])] for row in data ]
     data_punto3.sort()
     data_punto3
+    
     import itertools
     from operator import itemgetter
+    
     data_grouped_by_letra = {
     letra: list(group)
     for letra, group in itertools.groupby(
@@ -98,7 +100,8 @@ def pregunta_03():
     ]
     for letra in data_grouped_by_letra.keys()
 ]
-    y = tuple(sum_punto3)
+    y = dict(sum_punto3)
+    y = sorted(list(y.items()))
     return y
     
 
