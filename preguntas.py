@@ -128,7 +128,36 @@ def pregunta_04():
     ]
 
     """
-    return
+    import itertools
+    from operator import itemgetter
+
+    with open("data.csv", "r") as file:
+    data_prueba = file.readlines()
+    data_prueba = [line.replace("\n", "") for line in data_prueba]
+    data_prueba = [line.split("-") for line in data_prueba]
+
+    data_punto4 = [ [(row[1])]  for row in data_prueba ]
+    data_punto4.sort()
+    data_punto4[0:5]
+
+    data_grouped_by_month = {
+    mes: list(group)
+    for mes, group in itertools.groupby(
+        data_punto4[0:],
+        key=itemgetter(0),
+    )
+}
+    contador_mes = [
+    [
+        mes,
+        len([row[0] for row in data_grouped_by_month[mes]]),
+    ]
+    for mes in data_grouped_by_month.keys()
+]
+    z = dict(contador_mes)
+    z = sorted(list(z.items()))
+    return z
+    
 
 
 def pregunta_05():
