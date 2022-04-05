@@ -79,6 +79,25 @@ def pregunta_03():
     ]
 
     """
+    data_punto3 = [ [row[0]] + [int(row[1])] for row in data ]
+    data_punto3.sort()
+    data_punto3
+
+    data_grouped_by_letra = {
+    letra: list(group)
+    for letra, group in itertools.groupby(
+        data_punto3[0:],
+        key=itemgetter(0),
+    )
+}
+    sum_punto3 = [
+    [
+        letra,
+        sum([row[1] for row in data_grouped_by_letra[letra]]),
+    ]
+    for letra in data_grouped_by_letra.keys()
+]
+    return sum_punto3
     return
 
 
