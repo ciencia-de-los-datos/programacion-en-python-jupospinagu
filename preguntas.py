@@ -98,7 +98,7 @@ def pregunta_03():
     for letra in data_grouped_by_letra.keys()
 ]
     return sum_punto3
-    return
+    
 
 
 def pregunta_04():
