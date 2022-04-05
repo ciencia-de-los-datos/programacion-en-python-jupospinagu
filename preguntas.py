@@ -81,6 +81,9 @@ def pregunta_03():
     ]
 
     """
+    import itertools
+    from operator import itemgetter
+    
     data_punto3 = [ [row[0]] + [int(row[1])] for row in data ]
     data_punto3.sort()
     data_punto3
