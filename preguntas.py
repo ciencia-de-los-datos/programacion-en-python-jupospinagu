@@ -337,7 +337,30 @@ def pregunta_08():
     ]
 
     """
-    return
+  
+    import itertools
+    from operator import itemgetter
+
+    data_punto8 = [ [row[0]] + [int(row[1])]  for row in data ]
+    data_punto8 = sorted(data_punto8, key=itemgetter(1), reverse=False)
+
+    data_grouped_by_num = {
+    num: list(group)
+    for num, group in itertools.groupby(
+        data_punto8[0:],
+        key=itemgetter(1),
+    )
+}
+    resultado_punto8 = [
+    [
+        num,
+        sorted(set(list([row[0] for row in data_grouped_by_num[num]]))),
+    ]
+    for num in data_grouped_by_num.keys()
+]
+    resultado_punto8 = [ tuple(x) for x in resultado_punto8 ]
+
+    return resultado_punto8 
 
 
 def pregunta_09():
