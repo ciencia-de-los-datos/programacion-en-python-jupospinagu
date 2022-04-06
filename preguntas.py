@@ -228,6 +228,9 @@ def pregunta_06():
     ]
 
     """
+    import itertools
+    from operator import itemgetter
+    
     data_punto6 = [ (row[4])  for row in data ]
     data_punto6 = [line.split(",") for line in data_punto6]
     data_punto6[0:5]
@@ -243,8 +246,7 @@ def pregunta_06():
     flat_list = [ [row[0]]  + [int(row[1])]  for row in flat_list ]
     flat_list[0:5]
 
-    import itertools
-    from operator import itemgetter
+    
 
     data_grouped_by_letras = {
     letras: list(group)
