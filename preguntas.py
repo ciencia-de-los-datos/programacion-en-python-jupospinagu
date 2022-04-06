@@ -228,7 +228,42 @@ def pregunta_06():
     ]
 
     """
-    return
+    data_punto6 = [ (row[4])  for row in data ]
+    data_punto6 = [line.split(",") for line in data_punto6]
+    data_punto6[0:5]
+
+    flat_list = []
+
+
+    for item in data_punto6:
+        flat_list += item
+
+    flat_list = [line.split(":") for line in flat_list]
+    flat_list = sorted(flat_list, key=itemgetter(0), reverse=False)
+    flat_list = [ [row[0]]  + [int(row[1])]  for row in flat_list ]
+    flat_list[0:5]
+
+    import itertools
+    from operator import itemgetter
+
+    data_grouped_by_letras = {
+    letras: list(group)
+    for letras, group in itertools.groupby(
+        flat_list[0:],
+        key=itemgetter(0),
+    )
+}
+    resultado_punto6 = [
+    [
+        letras,
+        (min([row[1] for row in data_grouped_by_letras[letras]])),
+        (max([row[1] for row in data_grouped_by_letras[letras]]))
+    ]
+    for letras in data_grouped_by_letras.keys()
+]
+    resultado_punto6 = [ tuple(x) for x in resultado_punto6 ]
+
+    return resultado_punto6
 
 
 def pregunta_07():
