@@ -383,7 +383,28 @@ def pregunta_09():
     }
 
     """
-    return
+    import itertools
+    from operator import itemgetter
+
+    data_punto9 = [ (row[4])  for row in data ]
+    data_punto9 = [line.split(",") for line in data_punto9]
+    data_punto9[0:5]
+
+    flat_list = []
+
+
+    for item in data_punto9:
+        flat_list += item
+
+    flat_list = [line.split(":") for line in flat_list]
+    flat_list = sorted(flat_list, key=itemgetter(0), reverse=False)
+    flat_list = [ [row[0]]  + [int(row[1])]  for row in flat_list ]
+    flat_list[0:5]
+
+    prueba = [row[0] for row in flat_list]
+    result_final = dict((row, prueba.count(row)) for row in prueba)
+
+    return result_final
 
 
 def pregunta_10():
