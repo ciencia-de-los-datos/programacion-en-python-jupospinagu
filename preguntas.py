@@ -425,7 +425,15 @@ def pregunta_10():
 
 
     """
-    return
+    data_punto10 = [(row[0], row[3].split(","), row[4].split(","))
+ 
+    for row in data
+    ]
+
+    resultado_punto10 = [(row[0], len(row[1]), len(row[2])) for row in data_punto10]
+
+    return resultado_punto10
+    
 
 
 def pregunta_11():
