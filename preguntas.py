@@ -454,7 +454,21 @@ def pregunta_11():
 
 
     """
-    return
+    data_punto11 = [(row[3].split(","), int(row[1])) for row in data]
+
+    resultado_punto11 = dict(
+    [
+    ("a", sum([row[1] for row in data_punto11 if 'a' in row[0]])),
+    ("b", sum([row[1] for row in data_punto11 if 'b' in row[0]])),
+    ("c", sum([row[1] for row in data_punto11 if 'c' in row[0]])),
+    ("d", sum([row[1] for row in data_punto11 if 'd' in row[0]])),
+    ("e", sum([row[1] for row in data_punto11 if 'e' in row[0]])),
+    ("f", sum([row[1] for row in data_punto11 if 'f' in row[0]])),
+    ("g", sum([row[1] for row in data_punto11 if 'g' in row[0]])),
+    ]
+    )
+    return resultado_punto11
+    
 
 
 def pregunta_12():
