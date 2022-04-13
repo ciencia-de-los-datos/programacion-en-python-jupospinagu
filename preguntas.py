@@ -494,19 +494,19 @@ def pregunta_12():
     for elemento in data_punto12:
         suma = 0
         comas = elemento[1].split(",")
-    for str_elemento in comas:
-        dos_puntos = str_elemento.split(":")
-        int_numero = int(dos_puntos[1])
-        suma+= int_numero
-    lista_depurada.append((elemento[0], suma)) 
+        for str_elemento in comas:
+            dos_puntos = str_elemento.split(":")
+            int_numero = int(dos_puntos[1])
+            suma+= int_numero
+        lista_depurada.append((elemento[0], suma)) 
 
     dict_12 = {}
 
     for i in lista_depurada:
-     if i[0] not in dict_12:
-      dict_12[i[0]] = i[1]
-    else:
-     dict_12[i[0]] += i[1]
+        if i[0] not in dict_12:
+            dict_12[i[0]] = i[1]
+        else:
+            dict_12[i[0]] += i[1]
 
     dict_12 = dict(sorted(dict_12.items()))   
 
