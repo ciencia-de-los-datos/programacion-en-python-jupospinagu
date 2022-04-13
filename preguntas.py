@@ -503,10 +503,10 @@ def pregunta_12():
     dict_12 = {}
 
     for i in lista_depurada:
-        if i[0] not in dict_12:
-         dict_12[i[0]] = i[1]
+     if i[0] not in dict_12:
+      dict_12[i[0]] = i[1]
     else:
-        dict_12[i[0]] += i[1]
+     dict_12[i[0]] += i[1]
 
     dict_12 = dict(sorted(dict_12.items()))   
 
